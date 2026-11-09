@@ -1,79 +1,138 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#101820">
-<meta name="description" content="eren505w online mağazası. Özgün hediye, dekorasyon ve günlük yaşam ürünlerini keşfet.">
-<meta property="og:title" content="eren505w | Özgün seçimler">
-<meta property="og:description" content="Tarzını yansıtan detayları keşfet. eren505w resmi online mağazası.">
-<title>eren505w | Özgün seçimler</title>
-<style>
-:root{--bg:#0d141b;--panel:#151f28;--ink:#f4f2ed;--muted:#a9b2b9;--accent:#d6b98c;--line:rgba(255,255,255,.11);--max:1160px}
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,Arial,sans-serif}a{color:inherit;text-decoration:none}.wrap{width:min(var(--max),calc(100% - 44px));margin:auto}
-header{height:78px;border-bottom:1px solid var(--line);display:flex;align-items:center;position:sticky;top:0;z-index:5;background:rgba(13,20,27,.92);backdrop-filter:blur(16px)}.nav{display:flex;align-items:center;justify-content:space-between;gap:24px}.logo{font-size:23px;font-weight:900;letter-spacing:-1px}.logo span{color:var(--accent)}nav{display:flex;gap:30px;color:#c1c8cd;font-size:13px}nav a:hover{color:var(--accent)}.nav-cta,.btn{display:inline-flex;align-items:center;justify-content:center;gap:12px;background:var(--accent);color:#151a1d;padding:13px 20px;border-radius:3px;font-weight:800;font-size:12px;letter-spacing:.7px;transition:.2s}.nav-cta:hover,.btn:hover{transform:translateY(-2px);filter:brightness(1.08)}
-.hero{padding:90px 0 82px;position:relative;overflow:hidden;background:radial-gradient(ellipse at 75% 35%,rgba(214,185,140,.15),transparent 38%),linear-gradient(120deg,#0d141b,#17232b 62%,#101820)}.hero:after{content:"505W";position:absolute;right:-3vw;bottom:-90px;font-size:clamp(180px,30vw,390px);font-weight:900;letter-spacing:-.1em;color:rgba(255,255,255,.025);pointer-events:none}.hero-inner{position:relative;z-index:1;max-width:720px}.eyebrow{font-size:11px;letter-spacing:3px;color:var(--accent);font-weight:700;text-transform:uppercase}.hero h1{font-size:clamp(48px,8vw,90px);line-height:.98;letter-spacing:-.065em;margin:23px 0}.hero h1 span{color:var(--accent)}.hero p{color:#b6c0c5;line-height:1.8;font-size:16px;max-width:510px;margin:0 0 32px}.hero-actions{display:flex;align-items:center;gap:24px;flex-wrap:wrap}.text-link{font-size:13px;color:#d6dce0}.text-link b{color:var(--accent);margin-left:8px}
-.trust{border-bottom:1px solid var(--line);border-top:1px solid var(--line);background:#111a22}.trust-grid{display:grid;grid-template-columns:repeat(3,1fr)}.trust-item{padding:22px 16px;text-align:center;border-right:1px solid var(--line)}.trust-item:last-child{border:0}.trust-item strong{display:block;font-size:13px;margin-bottom:5px}.trust-item span{font-size:11px;color:var(--muted)}
-section{padding:82px 0}.section-head{display:flex;align-items:end;justify-content:space-between;gap:25px;margin-bottom:30px}.section-head h2{font-size:clamp(30px,4vw,43px);letter-spacing:-.04em;margin:12px 0 0}.section-head p{color:var(--muted);font-size:13px;max-width:360px;line-height:1.7;margin:0}
-.feature{display:grid;grid-template-columns:1.05fr .95fr;min-height:350px;background:var(--panel);border:1px solid var(--line)}.feature-art{min-height:300px;display:grid;place-items:center;position:relative;overflow:hidden;background:radial-gradient(circle at 50% 45%,rgba(214,185,140,.22),transparent 34%),linear-gradient(145deg,#26343d,#111a21)}.feature-art:before,.feature-art:after{content:"";position:absolute;width:240px;height:240px;border:1px solid rgba(214,185,140,.32);border-radius:50%}.feature-art:after{width:190px;height:190px;border-color:rgba(255,255,255,.12)}.product-mark{z-index:1;width:130px;height:130px;border:1px solid rgba(214,185,140,.6);border-radius:50%;display:grid;place-items:center;color:var(--accent);font-weight:900;font-size:22px;letter-spacing:-1px;background:rgba(12,18,23,.45);box-shadow:0 20px 70px rgba(0,0,0,.35)}.feature-copy{padding:clamp(28px,5vw,58px);display:flex;flex-direction:column;justify-content:center}.feature-copy h3{font-size:30px;letter-spacing:-.04em;margin:12px 0}.feature-copy p{color:var(--muted);line-height:1.8;font-size:14px;margin:0 0 25px}.feature-copy .btn{align-self:flex-start}
-.tiles{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.tile{padding:27px;background:#141e26;border:1px solid var(--line);min-height:180px;display:flex;flex-direction:column;justify-content:space-between;transition:.2s}.tile:hover{border-color:rgba(214,185,140,.55);transform:translateY(-3px)}.tile .num{color:var(--accent);font-size:11px;letter-spacing:2px}.tile h3{font-size:21px;margin:20px 0 8px}.tile p{font-size:12px;line-height:1.7;color:var(--muted);margin:0}.tile a{font-size:12px;color:var(--accent);margin-top:20px}
-.about{background:#121b23;border-block:1px solid var(--line)}.about-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:70px;align-items:center}.about h2{font-size:clamp(30px,4vw,46px);letter-spacing:-.05em;margin:12px 0}.about p{color:var(--muted);font-size:14px;line-height:1.9;margin:0;max-width:650px}.about-mark{font-size:clamp(65px,11vw,130px);font-weight:900;letter-spacing:-.09em;color:rgba(214,185,140,.22);text-align:center}
-.faq{max-width:780px}.faq details{border-bottom:1px solid var(--line);padding:20px 0}.faq summary{cursor:pointer;font-size:14px;font-weight:700}.faq details p{color:var(--muted);font-size:13px;line-height:1.8;margin:14px 0 0}
-.cta{padding:66px 30px;text-align:center;background:linear-gradient(120deg,#26343c,#18232b);border:1px solid var(--line)}.cta h2{font-size:clamp(30px,5vw,48px);letter-spacing:-.05em;margin:0 0 12px}.cta p{color:#bac3c8;font-size:14px;margin:0 auto 25px;line-height:1.7}
-footer{padding:30px 0;border-top:1px solid var(--line);color:#859199;font-size:11px}.footer-inner{display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap}.footer-brand{color:#f4f2ed;font-weight:900;font-size:16px}
-@media(max-width:760px){header{height:68px}nav{display:none}.hero{padding:76px 0 68px}.trust-grid{grid-template-columns:1fr}.trust-item{border-right:0;border-bottom:1px solid var(--line);padding:16px}.trust-item:last-child{border-bottom:0}section{padding:60px 0}.section-head{display:block}.section-head p{margin-top:14px}.feature{grid-template-columns:1fr}.feature-art{min-height:240px}.tiles{grid-template-columns:1fr}.tile{min-height:150px}.about-grid{grid-template-columns:1fr;gap:18px}.about-mark{order:2}.cta{padding:48px 20px}.nav-cta{padding:11px 13px;font-size:10px}.logo{font-size:21px}}
-@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
-
-/* ÜRÜN VİTRİNİ */
-.products-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
-.product-card{background:#151f28;border:1px solid var(--line);overflow:hidden;transition:.22s}
-.product-card:hover{transform:translateY(-4px);border-color:rgba(214,185,140,.55)}
-.product-photo{height:270px;background:linear-gradient(145deg,#202e37,#111a21);display:grid;place-items:center;color:#9ba7ad;position:relative;overflow:hidden}
-.product-photo:before{content:"";position:absolute;width:150px;height:150px;border:1px dashed rgba(214,185,140,.32);border-radius:50%}
-.product-photo span{z-index:1;font-size:11px;letter-spacing:2px;color:#c6b18f}
-.product-photo img{width:100%;height:100%;object-fit:cover;display:block;position:absolute;inset:0}
-.product-info{padding:20px}
-.product-info h3{font-size:17px;margin:0 0 9px}
-.product-info p{font-size:12px;line-height:1.6;color:var(--muted);margin:0 0 15px}
-.product-bottom{display:flex;align-items:center;justify-content:space-between;gap:10px}
-.product-price{font-size:17px;font-weight:800;color:var(--accent)}
-.product-buy{font-size:10px;font-weight:800;letter-spacing:.8px;padding:11px 13px;background:var(--accent);color:#151a1d}
-.product-note{font-size:11px;color:var(--muted);margin-top:20px;line-height:1.7}
-@media(max-width:760px){.products-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.product-photo{height:190px}.product-info{padding:14px}.product-info h3{font-size:14px}.product-price{font-size:14px}.product-buy{font-size:9px;padding:10px 8px}}
-@media(max-width:430px){.products-grid{grid-template-columns:1fr 1fr}.product-photo{height:155px}.product-info p{font-size:11px}}
-
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#101820">
+  <meta name="description" content="eren505w online mağazası. Özgün ürünleri keşfet ve Shopier üzerinden güvenle sipariş ver.">
+  <title>eren505w | Online Mağaza</title>
+  <style>
+    :root{--bg:#0c131a;--panel:#151f28;--panel2:#1b2933;--text:#f5f3ee;--muted:#aab5bb;--gold:#d7bb91;--line:rgba(255,255,255,.12);--max:1160px}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--text);font-family:Arial,Helvetica,sans-serif}a{color:inherit;text-decoration:none}.wrap{width:min(var(--max),calc(100% - 40px));margin:auto}
+    .topbar{border-bottom:1px solid var(--line);background:rgba(12,19,26,.95);position:sticky;top:0;z-index:10;backdrop-filter:blur(12px)}.nav{height:76px;display:flex;align-items:center;justify-content:space-between;gap:20px}.brand{font-size:24px;font-weight:900;letter-spacing:-1px}.brand span{color:var(--gold)}.navlinks{display:flex;gap:25px;color:#c4cbd0;font-size:13px}.navlinks a:hover{color:var(--gold)}.navbutton,.button{display:inline-flex;align-items:center;justify-content:center;background:var(--gold);color:#111820;font-size:12px;font-weight:800;letter-spacing:.6px;padding:14px 19px;border:0}.navbutton:hover,.button:hover{filter:brightness(1.1);transform:translateY(-2px)}
+    .hero{padding:95px 0 88px;background:radial-gradient(ellipse at 78% 40%,rgba(215,187,145,.17),transparent 36%),linear-gradient(120deg,#0c131a,#1a2730 65%,#101820);overflow:hidden}.eyebrow{font-size:11px;letter-spacing:3px;color:var(--gold);font-weight:bold}.hero h1{font-size:clamp(48px,8vw,88px);line-height:.98;letter-spacing:-5px;margin:22px 0}.hero h1 span{color:var(--gold)}.hero p{max-width:550px;color:#bbc4c9;line-height:1.8;font-size:16px;margin:0 0 30px}.hero-actions{display:flex;align-items:center;gap:24px;flex-wrap:wrap}.subtle-link{font-size:13px;color:#d5dadd}.subtle-link span{color:var(--gold);padding-left:7px}
+    .benefits{border-block:1px solid var(--line);background:#111a22}.benefit-grid{display:grid;grid-template-columns:repeat(3,1fr)}.benefit{text-align:center;padding:21px 12px;border-right:1px solid var(--line)}.benefit:last-child{border:0}.benefit strong{display:block;font-size:13px;margin-bottom:6px}.benefit small{font-size:11px;color:var(--muted)}
+    section.content{padding:78px 0}.section-head{display:flex;justify-content:space-between;align-items:end;gap:24px;margin-bottom:28px}.section-head h2{font-size:clamp(30px,4vw,44px);letter-spacing:-2px;margin:10px 0 0}.section-head p{max-width:380px;color:var(--muted);font-size:13px;line-height:1.8;margin:0}
+    .products{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}.product{background:var(--panel);border:1px solid var(--line);transition:.2s;overflow:hidden}.product:hover{transform:translateY(-4px);border-color:rgba(215,187,145,.55)}.photo{height:280px;background:linear-gradient(145deg,#263640,#121b22);display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;color:var(--gold);font-size:11px;letter-spacing:2px}.photo:before{content:"";position:absolute;width:145px;height:145px;border:1px dashed rgba(215,187,145,.35);border-radius:50%}.photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}.photo-label{z-index:1}.product-info{padding:20px}.product-info h3{font-size:17px;margin:0 0 9px}.product-info p{font-size:12px;line-height:1.7;color:var(--muted);min-height:40px;margin:0 0 16px}.product-row{display:flex;align-items:center;justify-content:space-between;gap:10px}.price{font-size:18px;font-weight:800;color:var(--gold)}.buy{font-size:10px;letter-spacing:.7px;font-weight:800;background:var(--gold);color:#111820;padding:11px 13px}.edit-note{margin-top:20px;color:#9eabb2;font-size:11px;line-height:1.8}
+    .categories{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.category{padding:27px;background:var(--panel);border:1px solid var(--line);min-height:170px}.category b{font-size:11px;letter-spacing:2px;color:var(--gold)}.category h3{font-size:21px;margin:22px 0 8px}.category p{font-size:12px;line-height:1.7;color:var(--muted);margin:0}
+    .about{background:#121c24;border-block:1px solid var(--line)}.about-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:50px;align-items:center}.about h2{font-size:clamp(32px,5vw,52px);letter-spacing:-2px;margin:12px 0}.about p{font-size:14px;line-height:1.9;color:var(--muted);margin:0}.about-mark{font-size:clamp(70px,12vw,130px);font-weight:900;letter-spacing:-9px;color:rgba(215,187,145,.22);text-align:center}
+    .faq{max-width:780px}.faq details{padding:19px 0;border-bottom:1px solid var(--line)}.faq summary{cursor:pointer;font-size:14px;font-weight:bold}.faq details p{font-size:13px;color:var(--muted);line-height:1.8;margin:13px 0 0}
+    .callout{padding:65px 25px;text-align:center;background:linear-gradient(120deg,#263640,#17232c);border:1px solid var(--line)}.callout h2{font-size:clamp(30px,5vw,48px);letter-spacing:-2px;margin:0 0 12px}.callout p{font-size:14px;color:#bdc6cb;line-height:1.8;margin:0 auto 24px}
+    footer{padding:28px 0;border-top:1px solid var(--line);font-size:11px;color:#89969d}.footer-inner{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}.footer-brand{font-size:16px;font-weight:900;color:var(--text)}
+    @media(max-width:760px){.nav{height:68px}.navlinks{display:none}.navbutton{padding:11px 13px;font-size:10px}.hero{padding:73px 0 65px}.hero h1{letter-spacing:-3px}.benefit-grid{grid-template-columns:1fr}.benefit{border-right:0;border-bottom:1px solid var(--line);padding:15px}.benefit:last-child{border:0}section.content{padding:58px 0}.section-head{display:block}.section-head p{margin-top:13px}.products{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.photo{height:190px}.product-info{padding:13px}.product-info h3{font-size:14px}.product-info p{font-size:11px;min-height:48px}.price{font-size:14px}.buy{font-size:9px;padding:10px 8px}.categories{grid-template-columns:1fr}.about-grid{grid-template-columns:1fr;gap:16px}.about-mark{order:2}.callout{padding:48px 18px}}
+    @media(max-width:390px){.products{grid-template-columns:1fr}.photo{height:230px}}
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+  </style>
 </head>
 <body>
-<header><div class="wrap nav"><a class="logo" href="#anasayfa">eren<span>505w</span></a><nav aria-label="Ana menü"><a href="#kesfet">Keşfet</a><a href="#koleksiyon">Koleksiyon</a><a href="#hakkimizda">Hakkımızda</a><a href="#sss">Sık sorulanlar</a></nav><a class="nav-cta" href="https://www.shopier.com/eren505w" target="_blank" rel="noopener">MAĞAZAYA GİT ↗</a></div></header>
-<main>
-<section class="hero" id="anasayfa"><div class="wrap hero-inner"><div class="eyebrow">EREN505W · RESMİ ONLINE VİTRİN</div><h1>Tarzını yansıtan<br><span>detayları</span> keşfet.</h1><p>Günlük yaşamına karakter katan, hediye etmeye ve kendine ayırmaya değer özgün seçimler.</p><div class="hero-actions"><a class="btn" href="https://www.shopier.com/eren505w" target="_blank" rel="noopener">ALIŞVERİŞE BAŞLA <span>↗</span></a><a class="text-link" href="#koleksiyon">Koleksiyonu keşfet <b>↓</b></a></div></div></section>
-<div class="trust"><div class="wrap trust-grid"><div class="trust-item"><strong>Özenle seçilen ürünler</strong><span>Detaylara önem veren seçimler</span></div><div class="trust-item"><strong>Güvenli alışveriş</strong><span>Sipariş ve ödeme Shopier üzerinden</span></div><div class="trust-item"><strong>Kolay sipariş</strong><span>Ürün detayları ve satın alma tek yerde</span></div></div></div>
-<section id="kesfet"><div class="wrap"><div class="section-head"><div><div class="eyebrow">ÖNE ÇIKAN</div><h2>Mağazayı keşfet</h2></div><p>Ürünleri incele, sana hitap eden detayı bul. Siparişini güvenli alışveriş için Shopier mağazası üzerinden tamamla.</p></div><div class="feature"><div class="feature-art" aria-label="eren505w marka görseli"><div class="product-mark">505W</div></div><div class="feature-copy"><div class="eyebrow">EREN505W SEÇKİSİ</div><h3>Aradığın özel detay burada.</h3><p>Güncel ürünleri, fotoğrafları, fiyatları ve ürün seçeneklerini Shopier mağazamızda görüntüleyebilirsin. Yeni ürünler eklendikçe seçkimiz de genişler.</p><a class="btn" href="https://www.shopier.com/eren505w" target="_blank" rel="noopener">ÜRÜNLERİ GÖRÜNTÜLE ↗</a></div></div></div></section>
+  <header class="topbar">
+    <div class="wrap nav">
+      <a class="brand" href="#anasayfa">eren<span>505w</span></a>
+      <nav class="navlinks" aria-label="Ana menü">
+        <a href="#urunler">Ürünler</a><a href="#kategoriler">Kategoriler</a><a href="#hakkimizda">Hakkımızda</a><a href="#sss">SSS</a>
+      </nav>
+      <a class="navbutton" href="https://www.shopier.com/eren505w" target="_blank" rel="noopener">SHOPIER MAĞAZASI ↗</a>
+    </div>
+  </header>
 
-<!-- ÜRÜN EKLEME ALANI: Her kartın fotoğraf kutusuna images/urun-1.jpg gibi kendi fotoğrafını koy. Başlık, fiyat ve Shopier bağlantısını düzenle. -->
-<section id="urunler"><div class="wrap">
-<div class="section-head"><div><div class="eyebrow">EREN505W MAĞAZA</div><h2>Ürünlerimiz</h2></div><p>Beğendiğin ürünü incele, siparişini Shopier üzerinden tamamla.</p></div>
-<div class="products-grid">
-<!-- ÜRÜN 1: Fotoğraf dosyanı images/urun-1.jpg adıyla ekleyebilirsin. -->
-<article class="product-card"><div class="product-photo"><span>ÜRÜN FOTOĞRAFI 01</span><!-- <img src="images/urun-1.jpg" alt="Ürün adı"> --></div><div class="product-info"><h3>Ürün adını buraya yaz</h3><p>Ürün açıklamasını buraya ekle.</p><div class="product-bottom"><span class="product-price">₺ Fiyat</span><a class="product-buy" href="https://www.shopier.com/eren505w" target="_blank" rel="noopener">SATIN AL ↗</a></div></div></article>
-<!-- ÜRÜN 2 -->
-<article class="product-card"><div class="product-photo"><span>ÜRÜN FOTOĞRAFI 02</span><!-- <img src="images/urun-2.jpg" alt="Ürün adı"> --></div><div class="product-info"><h3>Ürün adını buraya yaz</h3><p>Ürün açıklamasını buraya ekle.</p><div class="product-bottom"><span class="product-price">₺ Fiyat</span><a class="product-buy" href="https://www.shopier.com/eren505w" target="_blank" rel="noopener">SATIN AL ↗</a></div></div></article>
-<!-- ÜRÜN 3 -->
-<article class="product-card"><div class="product-photo"><span>ÜRÜN FOTOĞRAFI 03</span><!-- <img src="images/urun-3.jpg" alt="Ürün adı"> --></div><div class="product-info"><h3>Ürün adını buraya yaz</h3><p>Ürün açıklamasını buraya ekle.</p><div class="product-bottom"><span class="product-price">₺ Fiyat</span><a class="product-buy" href="https://www.shopier.com/eren505w" target="_blank" rel="noopener">SATIN AL ↗</a></div></div></article>
-<!-- ÜRÜN 4 -->
-<article class="product-card"><div class="product-photo"><span>ÜRÜN FOTOĞRAFI 04</span><!-- <img src="images/urun-4.jpg" alt="Ürün adı"> --></div><div class="product-info"><h3>Ürün adını buraya yaz</h3><p>Ürün açıklamasını buraya ekle.</p><div class="product-bottom"><span class="product-price">₺ Fiyat</span><a class="product-buy" href="https://www.shopier.com/eren505w" target="_blank" rel="noopener">SATIN AL ↗</a></div></div></article>
-<!-- ÜRÜN 5 -->
-<article class="product-card"><div class="product-photo"><span>ÜRÜN FOTOĞRAFI 05</span><!-- <img src="images/urun-5.jpg" alt="Ürün adı"> --></div><div class="product-info"><h3>Ürün adını buraya yaz</h3><p>Ürün açıklamasını buraya ekle.</p><div class="product-bottom"><span class="product-price">₺ Fiyat</span><a class="product-buy" href="https://www.shopier.com/eren505w" target="_blank" rel="noopener">SATIN AL ↗</a></div></div></article>
-<!-- ÜRÜN 6 -->
-<article class="product-card"><div class="product-photo"><span>ÜRÜN FOTOĞRAFI 06</span><!-- <img src="images/urun-6.jpg" alt="Ürün adı"> --></div><div class="product-info"><h3>Ürün adını buraya yaz</h3><p>Ürün açıklamasını buraya ekle.</p><div class="product-bottom"><span class="product-price">₺ Fiyat</span><a class="product-buy" href="https://www.shopier.com/eren505w" target="_blank" rel="noopener">SATIN AL ↗</a></div></div></article>
-</div><p class="product-note">Ürün fotoğraflarını GitHub'da images klasörüne yükle. Ardından ilgili karttaki fotoğraf satırını açıp dosya adını yazman yeterli. Her ürünün SATIN AL bağlantısını kendi Shopier ürün linkinle değiştirebilirsin.</p>
-</div></section>
+  <main>
+    <section class="hero" id="anasayfa">
+      <div class="wrap">
+        <div class="eyebrow">EREN505W · ONLINE MAĞAZA</div>
+        <h1>Tarzını yansıtan<br><span>özel detaylar.</span></h1>
+        <p>Günlük yaşamına değer katan, hediye etmeye ve kendine ayırmaya değer ürünleri keşfet.</p>
+        <div class="hero-actions">
+          <a class="button" href="#urunler">ÜRÜNLERİ KEŞFET ↓</a>
+          <a class="subtle-link" href="https://www.shopier.com/eren505w" target="_blank" rel="noopener">Shopier mağazasına git <span>↗</span></a>
+        </div>
+      </div>
+    </section>
 
-<section id="koleksiyon"><div class="wrap"><div class="section-head"><div><div class="eyebrow">NELER BULABİLİRSİN?</div><h2>Keşfetmeye değer kategoriler</h2></div><p>Vitrinimizde farklı zevklere ve kullanım alanlarına hitap eden fikirler bir araya geliyor.</p></div><div class="tiles"><a class="tile" href="https://www.shopier.com/eren505w" target="_blank" rel="noopener"><span class="num">01 / HEDİYE</span><div><h3>Hediye fikirleri</h3><p>Sevdiklerine özel, akılda kalan küçük dokunuşlar.</p></div><span>Shopier'de keşfet ↗</span></a><a class="tile" href="https://www.shopier.com/eren505w" target="_blank" rel="noopener"><span class="num">02 / YAŞAM</span><div><h3>Yaşam & dekor</h3><p>Yaşam alanlarına karakter katan detaylar.</p></div><span>Shopier'de keşfet ↗</span></a><a class="tile" href="https://www.shopier.com/eren505w" target="_blank" rel="noopener"><span class="num">03 / AKSESUAR</span><div><h3>Özgün aksesuarlar</h3><p>Tarzını tamamlayan kullanışlı seçimler.</p></div><span>Shopier'de keşfet ↗</span></a></div></div></section>
-<section class="about" id="hakkimizda"><div class="wrap about-grid"><div><div class="eyebrow">BİZ KİMİZ?</div><h2>Detaylarda<br>fark yarat.</h2></div><div><p>eren505w, günlük yaşamı güzelleştiren ve hediye etmeyi özel kılan ürünleri bir araya getiren bağımsız bir online mağazadır. Amacımız; özenli seçimleri, kolay ve anlaşılır bir alışveriş deneyimiyle buluşturmak. Ürün bilgileri, güncel fiyatlar ve sipariş işlemleri için Shopier mağazamızı ziyaret edebilirsin.</p></div><div class="about-mark">505W</div></div></section>
-<section id="sss"><div class="wrap"><div class="section-head"><div><div class="eyebrow">YARDIM</div><h2>Merak edilenler</h2></div></div><div class="faq"><details><summary>Nasıl sipariş verebilirim?</summary><p>Beğendiğin üründeki alışveriş bağlantısına dokunarak Shopier sayfasına geçebilir, siparişini oradan tamamlayabilirsin.</p></details><details><summary>Ürün fiyatlarını ve seçeneklerini nerede görebilirim?</summary><p>En güncel fiyat, ürün açıklaması, seçenekler ve stok bilgisi Shopier ürün sayfasında yer alır.</p></details><details><summary>Kargo ve teslimat bilgilerine nereden ulaşabilirim?</summary><p>Kargo ücreti, teslimat yöntemi ve tahmini gönderim bilgileri ilgili Shopier ürün/sipariş sayfasında belirtilir.</p></details><details><summary>Sipariş durumumu nasıl takip ederim?</summary><p>Sipariş ve ödeme işlemleri Shopier üzerinden yürütülür. Siparişinle ilgili güncel bilgilere Shopier hesabından ulaşabilirsin.</p></details></div></div></section>
-<section><div class="wrap"><div class="cta"><h2>Yeni favorini keşfet.</h2><p>eren505w mağazasındaki ürünlere göz at ve alışverişini Shopier üzerinden tamamla.</p><a class="btn" href="https://www.shopier.com/eren505w" target="_blank" rel="noopener">SHOPIER MAĞAZASINA GİT ↗</a></div></div></section>
-</main>
-<footer><div class="wrap footer-inner"><div><div class="footer-brand">eren505w</div><div style="margin-top:7px">Özgün seçimler, güzel detaylar.</div></div><div>© 2026 eren505w. Tüm hakları saklıdır.</div></div></footer>
-</body></html>
+    <div class="benefits"><div class="wrap benefit-grid">
+      <div class="benefit"><strong>Özenli ürün seçimi</strong><small>Detaylara önem veren tasarımlar</small></div>
+      <div class="benefit"><strong>Shopier üzerinden alışveriş</strong><small>Sipariş ve ödeme Shopier'de</small></div>
+      <div class="benefit"><strong>Kolay sipariş</strong><small>Ürünü seç, mağazadan satın al</small></div>
+    </div></div>
+
+    <section class="content" id="urunler">
+      <div class="wrap">
+        <div class="section-head">
+          <div><div class="eyebrow">MAĞAZA VİTRİNİ</div><h2>Ürünlerimiz</h2></div>
+          <p>Ürün fotoğrafını, adını, açıklamasını ve fiyatını aşağıdaki kartlarda kendin düzenleyebilirsin.</p>
+        </div>
+        <div class="products">
+          <!-- ÜRÜN 1: Fotoğrafını images/urun-1.jpg olarak yükle -->
+          <article class="product">
+            <div class="photo"><span class="photo-label">ÜRÜN FOTOĞRAFI 01</span><!-- <img src="images/urun-1.jpg" alt="Ürün adı"> --></div>
+            <div class="product-info"><h3>Ürün adı 1</h3><p>Ürünün kısa açıklamasını buraya yaz.</p><div class="product-row"><span class="price">₺ Fiyat</span><a class="buy" href="https://www.shopier.com/eren505w" target="_blank" rel="noopener">SATIN AL ↗</a></div></div>
+          </article>
+          <!-- ÜRÜN 2: Fotoğrafını images/urun-2.jpg olarak yükle -->
+          <article class="product">
+            <div class="photo"><span class="photo-label">ÜRÜN FOTOĞRAFI 02</span><!-- <img src="images/urun-2.jpg" alt="Ürün adı"> --></div>
+            <div class="product-info"><h3>Ürün adı 2</h3><p>Ürünün kısa açıklamasını buraya yaz.</p><div class="product-row"><span class="price">₺ Fiyat</span><a class="buy" href="https://www.shopier.com/eren505w" target="_blank" rel="noopener">SATIN AL ↗</a></div></div>
+          </article>
+          <!-- ÜRÜN 3: Fotoğrafını images/urun-3.jpg olarak yükle -->
+          <article class="product">
+            <div class="photo"><span class="photo-label">ÜRÜN FOTOĞRAFI 03</span><!-- <img src="images/urun-3.jpg" alt="Ürün adı"> --></div>
+            <div class="product-info"><h3>Ürün adı 3</h3><p>Ürünün kısa açıklamasını buraya yaz.</p><div class="product-row"><span class="price">₺ Fiyat</span><a class="buy" href="https://www.shopier.com/eren505w" target="_blank" rel="noopener">SATIN AL ↗</a></div></div>
+          </article>
+          <!-- ÜRÜN 4: Fotoğrafını images/urun-4.jpg olarak yükle -->
+          <article class="product">
+            <div class="photo"><span class="photo-label">ÜRÜN FOTOĞRAFI 04</span><!-- <img src="images/urun-4.jpg" alt="Ürün adı"> --></div>
+            <div class="product-info"><h3>Ürün adı 4</h3><p>Ürünün kısa açıklamasını buraya yaz.</p><div class="product-row"><span class="price">₺ Fiyat</span><a class="buy" href="https://www.shopier.com/eren505w" target="_blank" rel="noopener">SATIN AL ↗</a></div></div>
+          </article>
+          <!-- ÜRÜN 5: Fotoğrafını images/urun-5.jpg olarak yükle -->
+          <article class="product">
+            <div class="photo"><span class="photo-label">ÜRÜN FOTOĞRAFI 05</span><!-- <img src="images/urun-5.jpg" alt="Ürün adı"> --></div>
+            <div class="product-info"><h3>Ürün adı 5</h3><p>Ürünün kısa açıklamasını buraya yaz.</p><div class="product-row"><span class="price">₺ Fiyat</span><a class="buy" href="https://www.shopier.com/eren505w" target="_blank" rel="noopener">SATIN AL ↗</a></div></div>
+          </article>
+          <!-- ÜRÜN 6: Fotoğrafını images/urun-6.jpg olarak yükle -->
+          <article class="product">
+            <div class="photo"><span class="photo-label">ÜRÜN FOTOĞRAFI 06</span><!-- <img src="images/urun-6.jpg" alt="Ürün adı"> --></div>
+            <div class="product-info"><h3>Ürün adı 6</h3><p>Ürünün kısa açıklamasını buraya yaz.</p><div class="product-row"><span class="price">₺ Fiyat</span><a class="buy" href="https://www.shopier.com/eren505w" target="_blank" rel="noopener">SATIN AL ↗</a></div></div>
+          </article>
+        </div>
+        <p class="edit-note">Fotoğraf eklemek için ilgili karttaki yorum satırını aç: &lt;img src="images/urun-1.jpg" alt="Ürün adı"&gt;. Fotoğrafları GitHub'da images klasörüne aynı dosya adıyla yükle. Ürün başlığını, açıklamasını, fiyatını ve SATIN AL bağlantısını da kendi ürün bilgilerinle değiştir.</p>
+      </div>
+    </section>
+
+    <section class="content" id="kategoriler">
+      <div class="wrap">
+        <div class="section-head"><div><div class="eyebrow">ALIŞVERİŞİ KEŞFET</div><h2>Kategoriler</h2></div><p>Farklı zevklere ve kullanım alanlarına hitap eden ürünleri incele.</p></div>
+        <div class="categories">
+          <div class="category"><b>01 / HEDİYE</b><h3>Hediye fikirleri</h3><p>Sevdiklerin için özel ve akılda kalan seçimler.</p></div>
+          <div class="category"><b>02 / DEKORASYON</b><h3>Yaşam alanı</h3><p>Masana ve yaşam alanına karakter katan detaylar.</p></div>
+          <div class="category"><b>03 / AKSESUAR</b><h3>Günlük kullanım</h3><p>Tarzını tamamlayan kullanışlı ürünler.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="content about" id="hakkimizda">
+      <div class="wrap about-grid">
+        <div><div class="eyebrow">EREN505W HAKKINDA</div><h2>Güzel detaylar,<br>özel seçimler.</h2></div>
+        <p>eren505w, günlük yaşamı güzelleştiren ve hediye etmeyi özel kılan ürünleri bir araya getiren online mağazadır. Ürünlerimizi inceleyebilir, güncel fiyat ve ürün bilgilerine ulaşabilir, siparişini Shopier üzerinden tamamlayabilirsin.</p>
+        <div class="about-mark">505W</div>
+      </div>
+    </section>
+
+    <section class="content" id="sss">
+      <div class="wrap">
+        <div class="section-head"><div><div class="eyebrow">DESTEK</div><h2>Sık sorulan sorular</h2></div></div>
+        <div class="faq">
+          <details><summary>Nasıl sipariş verebilirim?</summary><p>Ürün kartındaki SATIN AL bağlantısına dokunarak Shopier mağazasına geçebilir ve siparişini oradan tamamlayabilirsin.</p></details>
+          <details><summary>Ürün fiyatlarını nereden görebilirim?</summary><p>Vitrindeki fiyat alanını biz güncelliyoruz. Satın almadan önce Shopier ürün sayfasındaki güncel fiyatı kontrol et.</p></details>
+          <details><summary>Kargo bilgilerini nereden öğrenebilirim?</summary><p>Kargo ücreti ve teslimat bilgileri Shopier ürün veya sipariş sayfasında gösterilir.</p></details>
+        </div>
+      </div>
+    </section>
+
+    <section class="content"><div class="wrap"><div class="callout">
+      <h2>Alışverişe hazır mısın?</h2>
+      <p>eren505w mağazasındaki ürünleri keşfet ve siparişini Shopier üzerinden tamamla.</p>
+      <a class="button" href="https://www.shopier.com/eren505w" target="_blank" rel="noopener">SHOPIER MAĞAZASINA GİT ↗</a>
+    </div></div></section>
+  </main>
+
+  <footer><div class="wrap footer-inner"><div><div class="footer-brand">eren505w</div><div style="margin-top:6px">Özgün seçimler, güzel detaylar.</div></div><div>© 2026 eren505w · Tüm hakları saklıdır.</div></div></footer>
+</body>
+</html>
