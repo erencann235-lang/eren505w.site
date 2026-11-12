@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#101010">
+<meta name="description" content="NOVA BARBER - Profesyonel saç kesimi, sakal tasarımı ve online WhatsApp randevu.">
+<title>NOVA BARBER | Premium Erkek Kuaförü</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
+<style>
+:root{--gold:#d5ad64;--bg:#101010;--panel:#1a1a1a;--muted:#aaa}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:85px}
+body{background:var(--bg);color:#fff;font-family:Montserrat,Arial,sans-serif}
+a{text-decoration:none;color:inherit}
+header{height:76px;position:sticky;top:0;z-index:10;background:#101010ed;border-bottom:1px solid #303030;display:flex;align-items:center;justify-content:space-between;padding:0 8%;backdrop-filter:blur(12px)}
+.logo{font-weight:800;font-size:23px;letter-spacing:3px}.logo span{color:var(--gold)}
+nav{display:flex;gap:25px}nav a{font-size:12px;color:#ddd}nav a:hover{color:var(--gold)}
+.hero{min-height:610px;display:flex;align-items:center;padding:80px 9%;background:linear-gradient(90deg,#101010 5%,#101010df 48%,#10101055),url('https://images.unsplash.com/photo-1503951914875-452162b0f3f1?w=1600') center/cover}
+.hero-inner{max-width:660px}.eyebrow{font-size:11px;letter-spacing:4px;color:var(--gold);font-weight:700}
+h1{font-family:'Playfair Display',serif;font-size:clamp(45px,7vw,78px);line-height:1.08;margin:20px 0}
+h1 span{color:var(--gold)}.hero p{color:#c4c4c4;line-height:1.9;font-size:14px;max-width:510px}
+.btn{display:inline-block;border:0;background:var(--gold);color:#111;padding:16px 25px;margin-top:27px;font-weight:800;font-size:11px;letter-spacing:1px;cursor:pointer;border-radius:2px}
+.btn:hover{background:#efca86}
+section{padding:82px 9%}.heading{text-align:center;margin-bottom:42px}.heading h2{font-family:'Playfair Display',serif;font-size:36px;margin:12px 0}.heading p{font-size:13px;color:var(--muted);line-height:1.8}
+.services{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.service{background:var(--panel);border:1px solid #303030;padding:29px;transition:.25s}
+.service:hover{transform:translateY(-5px);border-color:var(--gold)}
+.num{color:var(--gold);font-size:11px;letter-spacing:2px}.service h3{font-size:18px;margin:18px 0 10px}.service p{color:#aaa;font-size:12px;line-height:1.8;min-height:44px}.price{color:var(--gold);font-size:19px;font-weight:800;margin-top:18px}
+.about{background:#191919;display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+.about img{width:100%;height:380px;object-fit:cover}.about h2{font-family:'Playfair Display',serif;font-size:38px;margin:14px 0}.about p{color:#aaa;line-height:2;font-size:13px}
+.hours{max-width:680px;margin:auto;display:grid;grid-template-columns:1fr 1fr;gap:10px}.hour{background:#1b1b1b;padding:17px;display:flex;justify-content:space-between;gap:10px;font-size:12px}.hour span:last-child{color:var(--gold)}
+.booking{background:#191919}.booking form{max-width:720px;margin:auto;display:grid;grid-template-columns:1fr 1fr;gap:14px}
+input,select,textarea{width:100%;padding:16px;background:#101010;border:1px solid #444;color:#fff;font:inherit;font-size:13px;border-radius:2px;outline:none}
+input:focus,select:focus,textarea:focus{border-color:var(--gold)}textarea{grid-column:1/-1;min-height:100px;resize:vertical}
+.booking button{grid-column:1/-1;width:100%}
+.contact{text-align:center}.contact p{color:#aaa;font-size:13px;line-height:2}
+footer{background:#080808;text-align:center;padding:30px 15px;border-top:1px solid #333;color:#888;font-size:11px}footer span{color:var(--gold)}
+.whatsapp{position:fixed;bottom:22px;right:22px;z-index:20;background:#25d366;color:#fff;padding:15px 21px;border-radius:30px;font-weight:800;font-size:12px;box-shadow:0 5px 25px #0008}
+@media(max-width:760px){header{padding:0 5%;height:68px}.logo{font-size:18px}nav{gap:11px}nav a{font-size:10px}.hero{min-height:540px;padding:60px 7%}section{padding:62px 7%}.services{grid-template-columns:1fr}.about{grid-template-columns:1fr}.about img{height:270px}.hours{grid-template-columns:1fr}.booking form{grid-template-columns:1fr}textarea,.booking button{grid-column:1}.heading h2{font-size:30px}}
+@media(max-width:390px){nav{gap:7px}nav a{font-size:9px}}
+</style>
+</head>
+<body>
+<header>
+ <a class="logo" href="#anasayfa">NOVA <span>BARBER</span></a>
+ <nav aria-label="Ana menü"><a href="#hizmetler">Hizmetler</a><a href="#saatler">Saatler</a><a href="#randevu">Randevu</a><a href="#iletisim">İletişim</a></nav>
+</header>
+<main>
+<section class="hero" id="anasayfa"><div class="hero-inner">
+ <div class="eyebrow">PREMIUM BARBER EXPERIENCE</div>
+ <h1>Tarzını <span>Ortaya</span><br>Çıkar.</h1>
+ <p>Modern saç kesimi, profesyonel sakal tasarımı ve kişisel bakım. Kendine ayırdığın zamanı özel bir deneyime dönüştür.</p>
+ <a class="btn" href="#randevu">RANDEVU OLUŞTUR</a>
+</div></section>
+<section id="hizmetler">
+ <div class="heading"><div class="eyebrow">HİZMETLERİMİZ</div><h2>Profesyonel Bakım</h2><p>Tarzına uygun, özenli ve profesyonel berber hizmetleri.</p></div>
+ <div class="services">
+  <article class="service"><div class="num">01 / HAIRCUT</div><h3>Saç Kesimi</h3><p>Yüz şekline ve kişisel tarzına uygun modern saç kesimi.</p><div class="price">350 TL</div></article>
+  <article class="service"><div class="num">02 / BEARD</div><h3>Sakal Tasarımı</h3><p>Özenli sakal kesimi ve profesyonel şekillendirme.</p><div class="price">200 TL</div></article>
+  <article class="service"><div class="num">03 / COMBO</div><h3>Saç + Sakal</h3><p>Baştan sona yenilenme ve bakım deneyimi.</p><div class="price">500 TL</div></article>
+  <article class="service"><div class="num">04 / SKIN CARE</div><h3>Cilt Bakımı</h3><p>Rahatlatıcı ve yenileyici kişisel bakım uygulaması.</p><div class="price">300 TL</div></article>
+  <article class="service"><div class="num">05 / WASH</div><h3>Saç Yıkama</h3><p>Saçına uygun ürünlerle temizlik ve bakım.</p><div class="price">100 TL</div></article>
+  <article class="service"><div class="num">06 / STYLING</div><h3>Saç Şekillendirme</h3><p>Günlük veya özel günler için profesyonel şekillendirme.</p><div class="price">150 TL</div></article>
+ </div>
+</section>
+<section class="about">
+ <div><div class="eyebrow">HAKKIMIZDA</div><h2>Detaylarda Saklı<br>Mükemmellik.</h2><p>NOVA BARBER olarak müşteri memnuniyetini, kaliteyi ve kişisel tarzı ön planda tutuyoruz. Modern teknikler ve özenli hizmet anlayışımızla sana özel bir bakım deneyimi sunuyoruz.</p><a class="btn" href="#randevu">HEMEN RANDEVU AL</a></div>
+ <img src="https://images.unsplash.com/photo-1621605815971-fbc98d665033?w=900" alt="Modern berber salonu">
+</section>
+<section id="saatler">
+ <div class="heading"><div class="eyebrow">ÇALIŞMA SAATLERİ</div><h2>Ne Zaman Açığız?</h2></div>
+ <div class="hours">
+  <div class="hour"><span>Pazartesi</span><span>09:00 - 21:00</span></div><div class="hour"><span>Salı</span><span>09:00 - 21:00</span></div>
+  <div class="hour"><span>Çarşamba</span><span>09:00 - 21:00</span></div><div class="hour"><span>Perşembe</span><span>09:00 - 21:00</span></div>
+  <div class="hour"><span>Cuma</span><span>09:00 - 21:00</span></div><div class="hour"><span>Cumartesi</span><span>09:00 - 21:00</span></div>
+  <div class="hour"><span>Pazar</span><span>10:00 - 18:00</span></div>
+ </div>
+</section>
+<section class="booking" id="randevu">
+ <div class="heading"><div class="eyebrow">ONLINE RANDEVU</div><h2>Randevunu Oluştur</h2><p>Bilgilerini doldur, randevu talebini WhatsApp üzerinden gönder.</p></div>
+ <form id="bookingForm">
+  <input id="name" placeholder="Adınız Soyadınız" autocomplete="name" required>
+  <input id="phone" type="tel" placeholder="Telefon Numaranız" autocomplete="tel" required>
+  <select id="service" required><option value="">Hizmet Seçiniz</option><option>Saç Kesimi - 350 TL</option><option>Sakal Tasarımı - 200 TL</option><option>Saç + Sakal - 500 TL</option><option>Cilt Bakımı - 300 TL</option><option>Saç Yıkama - 100 TL</option><option>Saç Şekillendirme - 150 TL</option></select>
+  <input type="date" id="date" required>
+  <input type="time" id="time" required>
+  <textarea id="note" placeholder="Eklemek istediğiniz not (isteğe bağlı)"></textarea>
+  <button class="btn" type="submit">WHATSAPP İLE RANDEVU GÖNDER</button>
+ </form>
+</section>
+<section class="contact" id="iletisim">
+ <div class="heading"><div class="eyebrow">BİZE ULAŞIN</div><h2>İletişim</h2></div>
+ <p>Adres: Merkez Mahallesi, Örnek Sokak, No: 10</p><p>Telefon: 0555 123 45 67</p><p>Çalışma saatleri: 09:00 - 21:00</p>
+ <a href="#" id="contactWhatsapp" class="btn">WHATSAPP'TAN BİZE ULAŞIN</a>
+</section>
+</main>
+<footer>© 2026 <span>NOVA BARBER</span> · Tüm Hakları Saklıdır.</footer>
+<a href="#" class="whatsapp" id="floatingWhatsapp">WhatsApp ile yaz</a>
+<script>
+// Berberin WhatsApp numarasını ülke koduyla, + işareti olmadan yaz.
+// Örnek: 905551234567
+const WHATSAPP_NUMBER = "905551234567";
+function openWhatsApp(message){
+ const url = "https://wa.me/" + WHATSAPP_NUMBER + "?text=" + encodeURIComponent(message);
+ window.open(url,"_blank","noopener");
+}
+document.getElementById("bookingForm").addEventListener("submit",function(e){
+ e.preventDefault();
+ const name=document.getElementById("name").value.trim();
+ const phone=document.getElementById("phone").value.trim();
+ const service=document.getElementById("service").value;
+ const date=document.getElementById("date").value;
+ const time=document.getElementById("time").value;
+ const note=document.getElementById("note").value.trim() || "Yok";
+ const message="Merhaba, randevu oluşturmak istiyorum.\n\nAd Soyad: "+name+"\nTelefon: "+phone+"\nHizmet: "+service+"\nTarih: "+date+"\nSaat: "+time+"\nNot: "+note;
+ openWhatsApp(message);
+});
+document.getElementById("contactWhatsapp").addEventListener("click",function(e){e.preventDefault();openWhatsApp("Merhaba, berber salonunuz hakkında bilgi almak istiyorum.");});
+document.getElementById("floatingWhatsapp").addEventListener("click",function(e){e.preventDefault();openWhatsApp("Merhaba, bilgi almak istiyorum.");});
+document.getElementById("date").min=new Date().toLocaleDateString("en-CA");
+</script>
+</body>
+</html>
