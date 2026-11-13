@@ -15,6 +15,7 @@ map.Name = "KingdomMap"
 map.Parent = workspace
 
 local enemies, towers = {}, {}
+local playerActionTimes = {}
 local wave = 0
 local coreHealth = 1000
 local coreMaxHealth = 1000
@@ -57,6 +58,7 @@ Players.PlayerAdded:Connect(function(player)
  leaderstats.Name, leaderstats.Parent = "leaderstats", player
  makeStat(leaderstats, "Altin", 250)
  makeStat(leaderstats, "Dalga", 0)
+ makeStat(leaderstats, "KuleSeviyesi", 1)
  player.CharacterAdded:Connect(function(char)
   task.wait(.25)
   local root = char:FindFirstChild("HumanoidRootPart")
@@ -78,41 +80,55 @@ end
 
 local function spawnEnemy()
  local pos = spawnPositions[math.random(1, #spawnPositions)]
+ local kind = "Goblin"
+ local roll = math.random()
+ if wave >= 5 and roll < .18 then
+  kind = "Ork"
+ elseif wave >= 3 and roll < .42 then
+  kind = "Tank Goblin"
+ end
+ local configs = {
+  ["Goblin"] = {health = 60, speed = 12, damage = 8, reward = 18, color = Color3.fromRGB(88, 170, 65), size = Vector3.new(3,4,2), label = "GOBLİN"},
+  ["Tank Goblin"] = {health = 150, speed = 7, damage = 18, reward = 34, color = Color3.fromRGB(65, 115, 55), size = Vector3.new(4,5,3), label = "ZIRHLI"},
+  ["Ork"] = {health = 240, speed = 9, damage = 28, reward = 55, color = Color3.fromRGB(160, 75, 55), size = Vector3.new(5,6,4), label = "ORK"}
+ }
+ local cfg = configs[kind]
  local model = Instance.new("Model")
- model.Name = "Goblin"
+ model.Name = kind
+ model:SetAttribute("EnemyType", kind)
  model.Parent = map
  local body = Instance.new("Part")
- body.Name, body.Size = "HumanoidRootPart", Vector3.new(3, 4, 2)
- body.Position = Vector3.new(pos.X, 3, pos.Z)
- body.Color, body.Material, body.Anchored = Color3.fromRGB(88, 170, 65), Enum.Material.SmoothPlastic, false
+ body.Name, body.Size = "HumanoidRootPart", cfg.size
+ body.Position = Vector3.new(pos.X, cfg.size.Y / 2 + 1, pos.Z)
+ body.Color, body.Material, body.Anchored = cfg.color, Enum.Material.SmoothPlastic, false
  body.Parent = model
  body:SetNetworkOwner(nil)
  local head = Instance.new("Part")
  head.Name, head.Shape, head.Size = "Head", Enum.PartType.Ball, Vector3.new(2.2, 2.2, 2.2)
- head.Position, head.Color, head.Parent = body.Position + Vector3.new(0, 3, 0), Color3.fromRGB(115, 190, 75), model
+ head.Position, head.Color, head.Parent = body.Position + Vector3.new(0, cfg.size.Y / 2 + .2, 0), Color3.fromRGB(115, 190, 75), model
  local weld = Instance.new("WeldConstraint")
  weld.Part0, weld.Part1, weld.Parent = body, head, body
  local hum = Instance.new("Humanoid")
- hum.MaxHealth = 60 + wave * 12
+ hum.MaxHealth = cfg.health + wave * 14
  hum.Health = hum.MaxHealth
- hum.WalkSpeed = math.min(10 + wave * .25, 17)
+ hum.WalkSpeed = math.min(cfg.speed + wave * .15, 18)
  hum.Parent = model
  model.PrimaryPart = body
  local tag = Instance.new("BillboardGui")
- tag.Size, tag.StudsOffset, tag.AlwaysOnTop = UDim2.fromOffset(100, 20), Vector3.new(0, 4.2, 0), true
+ tag.Size, tag.StudsOffset, tag.AlwaysOnTop = UDim2.fromOffset(110, 22), Vector3.new(0, cfg.size.Y + 2, 0), true
  tag.Parent = head
  local label = Instance.new("TextLabel")
  label.Size, label.BackgroundTransparency, label.TextScaled = UDim2.fromScale(1, 1), 1, true
- label.TextColor3, label.TextStrokeTransparency, label.Text = Color3.new(1,1,1), .2, "GOBLİN"
+ label.TextColor3, label.TextStrokeTransparency, label.Text = Color3.new(1,1,1), .15, cfg.label
  label.Parent = tag
  enemies[model] = hum
  hum.Died:Connect(function()
   enemies[model] = nil
   for _, player in ipairs(Players:GetPlayers()) do
    local gold = getGold(player)
-   if gold then gold.Value += 18 + wave * 2 end
+   if gold then gold.Value += cfg.reward + wave * 2 end
   end
-  announce("Message", "Goblin yenildi! Takım altın kazandı.")
+  announce("Message", cfg.label .. " yenildi! Takım altın kazandı.")
   Debris:AddItem(model, 2)
  end)
  task.spawn(function()
@@ -120,7 +136,7 @@ local function spawnEnemy()
    local target = Vector3.new(0, 2, 0)
    local distance = (body.Position - target).Magnitude
    if distance < 9 then
-    coreHealth = math.max(0, coreHealth - (8 + wave))
+    coreHealth = math.max(0, coreHealth - (cfg.damage + wave))
     announce("Status", {wave = wave, core = coreHealth, maxCore = coreMaxHealth})
     task.wait(1.2)
    else
@@ -132,15 +148,18 @@ local function spawnEnemy()
 end
 
 local function placeTower(player, kind, position)
+ if kind ~= "Wall" and kind ~= "Tower" then return end
  if typeof(position) ~= "Vector3" then return end
- if (position - arenaCenter).Magnitude > 78 or position.Y < -2 or position.Y > 15 then return end
+ if (position - arenaCenter).Magnitude > 78 or position.Y < -2 or position.Y > 8 then return end
+ local char = player.Character
+ local playerRoot = char and char:FindFirstChild("HumanoidRootPart")
+ if not playerRoot or (playerRoot.Position - position).Magnitude > 110 then return end
  local gold = getGold(player)
  local cost = kind == "Wall" and 70 or 130
  if not gold or gold.Value < cost then
   remote:FireClient(player, "Message", "Yeterli altının yok!")
   return
  end
- -- Keep building positions on the ground and prevent stacking too close.
  local flat = Vector3.new(position.X, 0, position.Z)
  for _, tower in ipairs(towers) do
   if tower.part and (Vector3.new(tower.part.Position.X,0,tower.part.Position.Z) - flat).Magnitude < 9 then
@@ -151,19 +170,59 @@ local function placeTower(player, kind, position)
  gold.Value -= cost
  if kind == "Wall" then
   local p = part("Castle Wall", Vector3.new(9, 7, 3), CFrame.new(position.X, 3.5, position.Z), Color3.fromRGB(130, 132, 143), Enum.Material.Slate)
-  table.insert(towers, {part = p, kind = "Wall"})
+  table.insert(towers, {part = p, kind = "Wall", level = 1})
  else
   local base = part("Archer Tower", Vector3.new(6, 9, 6), CFrame.new(position.X, 4.5, position.Z), Color3.fromRGB(120, 80, 49), Enum.Material.Wood)
   local top = part("Tower Roof", Vector3.new(8, 2, 8), CFrame.new(position.X, 10, position.Z), Color3.fromRGB(155, 48, 43), Enum.Material.Slate)
   local flag = part("Tower Flag", Vector3.new(.4, 5, .4), CFrame.new(position.X, 13, position.Z), Color3.fromRGB(240, 210, 80), Enum.Material.Neon)
-  table.insert(towers, {part = base, kind = "Tower", top = top, flag = flag, lastShot = 0})
+  table.insert(towers, {part = base, kind = "Tower", top = top, flag = flag, lastShot = 0, level = 1})
  end
  remote:FireClient(player, "Message", kind == "Wall" and "Duvar inşa edildi!" or "Okçu kulesi kuruldu!")
 end
 
+local function upgradeNearestTower(player)
+ local char = player.Character
+ local root = char and char:FindFirstChild("HumanoidRootPart")
+ local gold = getGold(player)
+ if not root or not gold then return end
+ local chosen, best = nil, 35
+ for _, tower in ipairs(towers) do
+  if tower.kind == "Tower" and tower.part and tower.part.Parent then
+   local distance = (tower.part.Position - root.Position).Magnitude
+   if distance < best then chosen, best = tower, distance end
+  end
+ end
+ if not chosen then
+  remote:FireClient(player, "Message", "Yükseltmek için bir kuleye yaklaş!")
+  return
+ end
+ if chosen.level >= 5 then
+  remote:FireClient(player, "Message", "Bu kule en yüksek seviyede!")
+  return
+ end
+ local cost = 150 * chosen.level
+ if gold.Value < cost then
+  remote:FireClient(player, "Message", "Kule yükseltmek için " .. cost .. " altın gerekli.")
+  return
+ end
+ gold.Value -= cost
+ chosen.level += 1
+ chosen.part.Size = chosen.part.Size + Vector3.new(.5, 1, .5)
+ chosen.part.Color = Color3.fromRGB(115 + chosen.level * 12, 80, 49)
+ chosen.top.Size = chosen.top.Size + Vector3.new(.5, 0, .5)
+ remote:FireClient(player, "Message", "Kule seviye " .. chosen.level .. " oldu! Hasarı ve menzili arttı.")
+end
+
 remote.OnServerEvent:Connect(function(player, action, data)
+ if typeof(action) ~= "string" then return end
+ local now = os.clock()
+ local previous = playerActionTimes[player] or 0
+ if now - previous < .18 then return end
+ playerActionTimes[player] = now
  if action == "Place" and typeof(data) == "table" then
   placeTower(player, data.kind, data.position)
+ elseif action == "UpgradeTower" then
+  upgradeNearestTower(player)
  elseif action == "Attack" then
   local char = player.Character
   local root = char and char:FindFirstChild("HumanoidRootPart")
@@ -180,6 +239,10 @@ remote.OnServerEvent:Connect(function(player, action, data)
  end
 end)
 
+Players.PlayerRemoving:Connect(function(player)
+ playerActionTimes[player] = nil
+end)
+
 -- Tower auto-fire
 RunService.Heartbeat:Connect(function()
  for _, tower in ipairs(towers) do
@@ -189,12 +252,12 @@ RunService.Heartbeat:Connect(function()
     local root = model:FindFirstChild("HumanoidRootPart")
     if root and hum.Health > 0 then
      local d = (root.Position - tower.part.Position).Magnitude
-     if d < 48 and (not nearestDist or d < nearestDist) then nearest, nearestDist = hum, d end
+     if d < (48 + ((tower.level or 1) - 1) * 6) and (not nearestDist or d < nearestDist) then nearest, nearestDist = hum, d end
     end
    end
    if nearest then
     tower.lastShot = os.clock()
-    nearest:TakeDamage(16)
+    nearest:TakeDamage(16 + ((tower.level or 1) - 1) * 10)
    end
   end
  end
