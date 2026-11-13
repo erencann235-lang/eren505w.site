@@ -31,17 +31,21 @@ local title = label("🏰 KRALLIK SAVUNMASI", UDim2.fromOffset(280, 42), UDim2.f
 title.TextSize = 20
 local stats = label("💎 Kale Kristali: 1000 / 1000", UDim2.fromOffset(260, 36), UDim2.fromOffset(14, 62))
 local waveLabel = label("⚔️ Dalga: Hazırlan", UDim2.fromOffset(180, 36), UDim2.fromOffset(14, 104))
+local goldLabel = label("🪙 Altın: 250", UDim2.fromOffset(180, 34), UDim2.fromOffset(14, 146))
 local message = label("Düşmanlara karşı kaleni koru!", UDim2.new(0.55, 0, 0, 38), UDim2.new(.225, 0, 0, 14))
 message.TextSize = 16
-local tower = button("🏹 OKÇU KULESİ 130 ALTIN", UDim2.fromOffset(220, 46), UDim2.new(1, -234, 1, -116))
-local wall = button("🧱 DUVAR 70 ALTIN", UDim2.fromOffset(220, 46), UDim2.new(1, -234, 1, -62), Color3.fromRGB(90, 115, 145))
-local attack = button("⚔️ VUR", UDim2.fromOffset(130, 62), UDim2.new(1, -150, .5, -31), Color3.fromRGB(170, 55, 48))
+local tower = button("🏹 KULE 130", UDim2.fromOffset(180, 42), UDim2.new(1, -192, 1, -150))
+local wall = button("🧱 DUVAR 70", UDim2.fromOffset(180, 42), UDim2.new(1, -192, 1, -102), Color3.fromRGB(90, 115, 145))
+local upgrade = button("⬆ KULEYİ GELİŞTİR", UDim2.fromOffset(180, 42), UDim2.new(1, -192, 1, -54), Color3.fromRGB(70, 145, 90))
+local attack = button("⚔️ VUR", UDim2.fromOffset(108, 58), UDim2.new(1, -122, .5, -29), Color3.fromRGB(170, 55, 48))
 local mode = nil
 tower.MouseButton1Click:Connect(function() mode = "Tower"; message.Text = "Kuleyi yerleştirmek için zeminde bir yere tıkla." end)
 wall.MouseButton1Click:Connect(function() mode = "Wall"; message.Text = "Duvarı yerleştirmek için zeminde bir yere tıkla." end)
 attack.MouseButton1Click:Connect(function() remote:FireServer("Attack") end)
-mouse.Button1Down:Connect(function()
- if mode then
+upgrade.MouseButton1Click:Connect(function() remote:FireServer("UpgradeTower") end)
+UserInputService.InputBegan:Connect(function(input, processed)
+ if processed or not mode then return end
+ if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then
   local hit = mouse.Hit
   if hit then remote:FireServer("Place", {kind = mode, position = hit.Position}) end
   mode = nil
@@ -51,6 +55,17 @@ UserInputService.InputBegan:Connect(function(input, processed)
  if processed then return end
  if input.KeyCode == Enum.KeyCode.E then remote:FireServer("Attack") end
 end)
+
+local function watchGold()
+ local statsFolder = player:WaitForChild("leaderstats", 15)
+ if not statsFolder then return end
+ local gold = statsFolder:WaitForChild("Altin", 15)
+ if not gold then return end
+ local function update() goldLabel.Text = "🪙 Altın: " .. tostring(gold.Value) end
+ update()
+ gold:GetPropertyChangedSignal("Value"):Connect(update)
+end
+task.spawn(watchGold)
 remote.OnClientEvent:Connect(function(kind, data)
  if kind == "Status" or kind == "Wave" then
   stats.Text = "💎 Kale Kristali: " .. tostring(data.core) .. " / " .. tostring(data.maxCore)
