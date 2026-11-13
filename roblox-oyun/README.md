@@ -11,10 +11,18 @@ Bu proje Roblox Studio için hazırlanmış, oynanabilir bir üs savunma başlan
 
 ## Oynanış
 - WASD: hareket
-- Sol tık / Ekrandaki VUR: yakındaki düşmana kılıç saldırısı
-- Arayüzden OKÇU KULESİ veya DUVAR seçip haritadaki yeşil alana tıkla
-- Düşman dalgalarına karşı kalenin KRİSTALİNİ koru
-- Düşmanları yenerek altın kazan, savunmanı güçlendir
-- Her dalgada düşmanlar güçlenir
+- E tuşu / ekrandaki VUR: yakındaki düşmana kılıç saldırısı
+- KULE veya DUVAR düğmesine basıp zeminde bir noktaya dokun/tıkla
+- Bir okçu kulesinin yakınına gidip KULEYİ GELİŞTİR düğmesine bas (seviye başına artan altın gerekir; en fazla seviye 5)
+- Goblin, zırhlı goblin ve ork dalgalarına karşı kristali koru
+- Düşmanları yenerek altın kazan; kuleler otomatik ateş eder
+- Mobilde ekrandaki savaş ve inşa düğmelerini kullan
 
 Not: Bu bir Roblox Studio proje kodudur; Roblox hesabında yayınlama işlemi Roblox Studio içinden yapılır.
+
+
+## Bu sürümde eklenenler
+- Üç farklı düşman sınıfı: goblin, zırhlı goblin ve ork; farklı can, hız, hasar ve ödüller.
+- Okçu kuleleri için yakından yükseltme: hasar ve menzil seviye başına artar; en yüksek seviye 5.
+- İstemci isteklerinde sunucu tarafı eylem aralığı kontrolü, bina türü/konum/mesafe ve altın doğrulaması.
+- Dokunmatik ekranda bina yerleştirme ve daha kompakt savaş düğmeleri.
