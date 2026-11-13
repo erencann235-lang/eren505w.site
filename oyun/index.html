@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no"><meta name="theme-color" content="#080d18">
+<title>NEON SAVUNMA — Mini Nişancı</title><link rel="stylesheet" href="style.css">
+</head>
+<body><main id="shell">
+<canvas id="game" width="960" height="600"></canvas>
+<header class="hud"><div class="logo">NEON <b>SAVUNMA</b></div><div class="stats"><div><small>SKOR</small><strong id="score">0000</strong></div><div><small>DALGA</small><strong id="wave">01</strong></div><div><small>MERMİ</small><strong id="ammo">12 / 12</strong></div></div></header>
+<div class="health"><small>ZIRH / CAN</small><div><i id="healthFill"></i></div></div>
+<div id="hint">WASD / OK TUŞLARI: HAREKET &nbsp; • &nbsp; FARE: NİŞAN &nbsp; • &nbsp; TIKLA: ATEŞ &nbsp; • &nbsp; R: ŞARJÖR</div>
+<button id="pause" hidden>DURAKLAT Ⅱ</button>
+<section class="overlay" id="startScreen"><div class="card"><small class="kicker">ARCADE SHOOTER • BÖLÜM 01</small><h1>NEON<br><em>SAVUNMA</em></h1><p>Robot sürülerine karşı arenada hayatta kal. Nişan al, ateş et ve her dalgada daha güçlü düşmanlarla karşılaş.</p><button id="start">OYUNA BAŞLA →</button><div class="keys"><span>W A S D / OK TUŞLARI · HAREKET</span><span>FARE SOL TIK · ATEŞ</span><span>R · ŞARJÖR</span></div><small class="foot">Tarayıcıda oynanır. Kurulum gerekmez.</small></div></section>
+<section class="overlay" id="endScreen" hidden><div class="card"><small class="kicker">GÖREV TAMAMLANDI</small><h1><em>OYUN BİTTİ</em></h1><p id="result">Skorun: 0</p><button id="again">TEKRAR OYNA ↻</button></div></section>
+</main><script src="game.js"></script></body></html>
