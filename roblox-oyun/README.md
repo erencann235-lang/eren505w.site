@@ -23,7 +23,7 @@ Bu proje Roblox Studio için hazırlanmış, oynanabilir bir üs savunma başlan
 - Üç temel düşman sınıfına ek olarak her 5. dalgada bir Ork Şefi boss'u.
 - Yeni yerleştirilebilir muhafız birimi; yakındaki düşmanlara otomatik saldırır.
 - Kule ve muhafız yükseltmeleri hasarı ve menzili artırır (en fazla seviye 5).
-- Mobil dokunma konumundan ışın göndererek bina yerleştirme ve ekran boyutuna göre ölçeklenen HUD.
+- Mobil dokunma konumundan ışın göndererek bina yerleştirme ve telefon/tablet/masaüstüne göre yeniden düzenlenen HUD.
 - Sunucu tarafında bina türü, koordinat, arena sınırı, oyuncu mesafesi, altın, çakışma, eylem ve saldırı bekleme süresi kontrolleri.
 - Kale gövdesinin çarpışması kapatılarak düşmanların kristale ulaşması sağlandı.
 
