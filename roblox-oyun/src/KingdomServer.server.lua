@@ -374,6 +374,7 @@ RunService.Heartbeat:Connect(function()
 			local level = defense.level or 1
 			local cooldown = defense.kind == "Tower" and 1.1 or 1.4
 			if now - (defense.lastShot or 0) >= cooldown then
+				defense.lastShot = now
 				local range = defense.kind == "Tower" and (48 + (level - 1) * 6) or (30 + (level - 1) * 4)
 				local nearest, nearestDistance
 				for model, hum in pairs(enemies) do
@@ -386,7 +387,6 @@ RunService.Heartbeat:Connect(function()
 					end
 				end
 				if nearest then
-					defense.lastShot = now
 					local damage = defense.kind == "Tower" and (16 + (level - 1) * 10) or (12 + (level - 1) * 8)
 					nearest:TakeDamage(damage)
 				end
