@@ -13,8 +13,14 @@ gui.ResetOnSpawn = false
 gui.DisplayOrder = 10
 gui.Parent = player:WaitForChild("PlayerGui")
 
+local root = Instance.new("Frame")
+root.Name = "HUDRoot"
+root.BackgroundTransparency = 1
+root.Size = UDim2.fromScale(1, 1)
+root.Parent = gui
+
 local scale = Instance.new("UIScale")
-scale.Parent = gui
+scale.Parent = root
 
 local function updateScale()
 	local camera = workspace.CurrentCamera
@@ -35,7 +41,7 @@ local function label(text, size, pos)
 	item.TextColor3, item.Text = Color3.new(1, 1, 1), text
 	item.TextScaled = true
 	item.Font = Enum.Font.GothamBold
-	item.Parent = gui
+	item.Parent = root
 	local corner = Instance.new("UICorner")
 	corner.CornerRadius = UDim.new(0, 10)
 	corner.Parent = item
@@ -50,7 +56,7 @@ local function button(text, size, pos, color)
 	item.Text, item.TextScaled = text, true
 	item.Font = Enum.Font.GothamBold
 	item.AutoButtonColor = true
-	item.Parent = gui
+	item.Parent = root
 	local corner = Instance.new("UICorner")
 	corner.CornerRadius = UDim.new(0, 10)
 	corner.Parent = item
