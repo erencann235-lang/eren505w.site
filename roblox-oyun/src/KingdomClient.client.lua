@@ -19,20 +19,6 @@ root.BackgroundTransparency = 1
 root.Size = UDim2.fromScale(1, 1)
 root.Parent = gui
 
-local scale = Instance.new("UIScale")
-scale.Parent = root
-
-local function updateScale()
-	local camera = workspace.CurrentCamera
-	if not camera then return end
-	scale.Scale = math.clamp(camera.ViewportSize.X / 900, 0.68, 1)
-end
-updateScale()
-task.spawn(function()
-	while not workspace.CurrentCamera do task.wait() end
-	workspace.CurrentCamera:GetPropertyChangedSignal("ViewportSize"):Connect(updateScale)
-end)
-
 local function label(text, size, pos)
 	local item = Instance.new("TextLabel")
 	item.Size, item.Position = size, pos
@@ -74,6 +60,43 @@ local wall = button("DUVAR  •  70", UDim2.fromOffset(172, 38), UDim2.new(1, -1
 local guard = button("MUHAFIZ  •  180", UDim2.fromOffset(172, 38), UDim2.new(1, -186, 1, -116), Color3.fromRGB(65, 95, 145))
 local upgrade = button("SAVUNMAYI GELİŞTİR", UDim2.fromOffset(172, 38), UDim2.new(1, -186, 1, -72), Color3.fromRGB(70, 145, 90))
 local attack = button("VUR", UDim2.fromOffset(92, 56), UDim2.new(1, -106, 0.5, -28), Color3.fromRGB(170, 55, 48))
+
+local function updateLayout()
+	local camera = workspace.CurrentCamera
+	if not camera then return end
+	local width = camera.ViewportSize.X
+
+	if width < 650 then
+		title.Size, title.Position = UDim2.fromOffset(174, 30), UDim2.fromOffset(8, 8)
+		stats.Size, stats.Position = UDim2.fromOffset(166, 28), UDim2.fromOffset(8, 43)
+		waveLabel.Size, waveLabel.Position = UDim2.fromOffset(96, 26), UDim2.fromOffset(8, 76)
+		goldLabel.Size, goldLabel.Position = UDim2.fromOffset(96, 26), UDim2.fromOffset(110, 76)
+		message.Size, message.Position = UDim2.new(1, -16, 0, 34), UDim2.fromOffset(8, 108)
+
+		tower.Size, tower.Position = UDim2.new(0.25, -8, 0, 42), UDim2.new(0, 6, 1, -50)
+		wall.Size, wall.Position = UDim2.new(0.25, -8, 0, 42), UDim2.new(0.25, 2, 1, -50)
+		guard.Size, guard.Position = UDim2.new(0.25, -8, 0, 42), UDim2.new(0.5, -2, 1, -50)
+		upgrade.Size, upgrade.Position = UDim2.new(0.25, -8, 0, 42), UDim2.new(0.75, -6, 1, -50)
+		attack.Size, attack.Position = UDim2.fromOffset(82, 52), UDim2.new(1, -90, 0.55, -26)
+	else
+		title.Size, title.Position = UDim2.fromOffset(260, 40), UDim2.fromOffset(14, 14)
+		stats.Size, stats.Position = UDim2.fromOffset(240, 34), UDim2.fromOffset(14, 60)
+		waveLabel.Size, waveLabel.Position = UDim2.fromOffset(170, 34), UDim2.fromOffset(14, 100)
+		goldLabel.Size, goldLabel.Position = UDim2.fromOffset(170, 34), UDim2.fromOffset(14, 140)
+		message.Size, message.Position = UDim2.new(0.52, 0, 0, 38), UDim2.new(0.24, 0, 0, 14)
+
+		tower.Size, tower.Position = UDim2.fromOffset(172, 38), UDim2.new(1, -186, 1, -204)
+		wall.Size, wall.Position = UDim2.fromOffset(172, 38), UDim2.new(1, -186, 1, -160)
+		guard.Size, guard.Position = UDim2.fromOffset(172, 38), UDim2.new(1, -186, 1, -116)
+		upgrade.Size, upgrade.Position = UDim2.fromOffset(172, 38), UDim2.new(1, -186, 1, -72)
+		attack.Size, attack.Position = UDim2.fromOffset(92, 56), UDim2.new(1, -106, 0.5, -28)
+	end
+end
+updateLayout()
+task.spawn(function()
+	while not workspace.CurrentCamera do task.wait() end
+	workspace.CurrentCamera:GetPropertyChangedSignal("ViewportSize"):Connect(updateLayout)
+end)
 
 local mode = nil
 local function selectBuild(kind, description)
