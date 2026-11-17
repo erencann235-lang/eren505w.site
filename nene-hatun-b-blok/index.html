@@ -2,83 +2,47 @@
 <html lang="tr">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="theme-color" content="#102b46">
-<meta name="description" content="Nene Hatun Sitesi B Blok dilek, öneri ve şikâyet iletişim sayfası.">
-<title>Nene Hatun Sitesi | B Blok</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#ffffff">
+<title>Nene Hatun Sitesi B Blok</title>
 <style>
-:root{color-scheme:light;--ink:#142d45;--muted:#64778a;--blue:#1769aa;--green:#19b968}
 *{box-sizing:border-box}
-html{min-height:100%;background:#edf3f8}
-body{margin:0;min-height:100vh;min-height:100svh;font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;color:var(--ink);background:radial-gradient(ellipse at 12% 10%,rgba(90,164,220,.18),transparent 35%),radial-gradient(ellipse at 90% 90%,rgba(31,185,112,.10),transparent 32%),linear-gradient(145deg,#edf4fa,#f8fbfd 55%,#eaf2f8);display:flex;align-items:center;justify-content:center;padding:24px}
-.shell{width:min(100%,520px);margin:auto}
-.card{position:relative;overflow:hidden;background:rgba(255,255,255,.94);border:1px solid rgba(198,214,228,.8);border-radius:28px;box-shadow:0 24px 70px rgba(23,55,82,.13);padding:clamp(25px,6vw,42px);text-align:center}
-.card:before{content:"";position:absolute;inset:0 0 auto;height:7px;background:linear-gradient(90deg,#1769aa,#39a4d8,#24b978)}
-.brand{display:inline-flex;align-items:center;gap:9px;padding:8px 13px;border-radius:99px;background:#eef6fc;color:#245d88;font-size:11px;font-weight:800;letter-spacing:1.35px;text-transform:uppercase}
-.brand svg{width:17px;height:17px}
-h1{font-size:clamp(29px,7vw,39px);line-height:1.12;letter-spacing:-1.3px;margin:20px 0 7px}
-.block{font-size:15px;color:var(--blue);font-weight:750;letter-spacing:2px;margin:0}
-.scene{width:min(100%,310px);height:auto;display:block;margin:18px auto 10px}
-.status{display:inline-flex;align-items:center;gap:8px;color:#16834d;background:#eaf8f0;border:1px solid #d4f0df;border-radius:99px;padding:8px 13px;font-size:12px;font-weight:750;margin:2px 0 16px}
-.status i{width:7px;height:7px;border-radius:50%;background:#20b86a;box-shadow:0 0 0 4px rgba(32,184,106,.13)}
-h2{font-size:clamp(22px,5vw,27px);line-height:1.25;letter-spacing:-.5px;margin:0 0 10px}
-.desc{max-width:365px;margin:0 auto;color:var(--muted);font-size:14px;line-height:1.75}
-.actions{margin-top:25px}
-.whatsapp{display:flex;min-height:58px;width:100%;align-items:center;justify-content:center;gap:11px;padding:14px 18px;border-radius:15px;background:linear-gradient(135deg,#20c873,#13a95d);color:#fff;text-decoration:none;font-size:15px;font-weight:800;box-shadow:0 10px 22px rgba(25,185,104,.23);transition:transform .18s,box-shadow .18s}
-.whatsapp:hover{transform:translateY(-2px);box-shadow:0 14px 26px rgba(25,185,104,.28)}
-.whatsapp:active{transform:scale(.985)}
-.whatsapp svg{width:23px;height:23px;flex:none}
-.number{margin-top:12px;color:#718397;font-size:13px;font-weight:650;letter-spacing:.4px}
-.note{margin:22px 0 0;padding-top:17px;border-top:1px solid #edf1f5;color:#91a0ae;font-size:11px;line-height:1.6}
-@media(max-width:480px){body{padding:14px}.card{border-radius:23px;padding:27px 21px 22px}.scene{max-width:275px;margin:13px auto 8px}.whatsapp{min-height:56px;font-size:14px}}
-@media(max-width:350px){body{padding:9px}.card{padding:24px 16px 19px}.brand{font-size:10px;letter-spacing:1px}}
-@media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+html,body{margin:0;min-height:100%;font-family:Arial,Helvetica,sans-serif}
+body{min-height:100vh;min-height:100svh;background:#fff;display:flex;align-items:center;justify-content:center;padding:24px;color:#202d3a}
+main{width:100%;max-width:460px;min-height:min(760px,calc(100svh - 48px));display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center}
+h1{font-size:clamp(27px,7vw,36px);line-height:1.2;letter-spacing:-.8px;font-weight:750;margin:0 0 24px;color:#1d3448}
+h1 span{display:block}
+.art{display:block;width:min(100%,330px);height:auto;margin:0 auto 28px}
+a{width:min(100%,330px);min-height:56px;display:flex;align-items:center;justify-content:center;gap:11px;border-radius:12px;background:#20bd68;color:#fff;text-decoration:none;font-size:16px;font-weight:700;padding:14px 18px;box-shadow:0 8px 22px rgba(32,189,104,.18)}
+a:active{transform:scale(.985)}
+a svg{width:23px;height:23px;flex:none}
+@media(max-width:380px){body{padding:18px}main{min-height:calc(100svh - 36px)}h1{font-size:28px;margin-bottom:18px}.art{width:min(100%,285px);margin-bottom:22px}a{font-size:15px}}
 </style>
 </head>
 <body>
-<main class="shell">
-<section class="card" aria-labelledby="page-title">
-  <div class="brand">
-    <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M3 10.5 12 3l9 7.5V21H3V10.5Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M9 21v-6h6v6M7 11h2m6 0h2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
-    Nene Hatun Sitesi
-  </div>
-  <h1 id="page-title">Dilek ve Şikâyet</h1>
-  <p class="block">B BLOK</p>
-
-  <svg class="scene" viewBox="0 0 340 230" role="img" aria-label="Modern apartman ve onay işareti çizimi" xmlns="http://www.w3.org/2000/svg">
+<main>
+  <h1><span>Dilek ve şikâyetinizi</span> aldık.</h1>
+  <svg class="art" viewBox="0 0 340 270" role="img" aria-label="Dilek ve şikâyet mesajınız alındı" xmlns="http://www.w3.org/2000/svg">
     <defs>
-      <linearGradient id="building" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#e8f4fc"/><stop offset="1" stop-color="#c8dfef"/></linearGradient>
-      <linearGradient id="check" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#32ce83"/><stop offset="1" stop-color="#12a95e"/></linearGradient>
+      <linearGradient id="paper" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#f2f8fc"/><stop offset="1" stop-color="#dcecf7"/></linearGradient>
+      <linearGradient id="green" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#38d58a"/><stop offset="1" stop-color="#16ad61"/></linearGradient>
     </defs>
-    <ellipse cx="164" cy="211" rx="126" ry="10" fill="#eaf0f5"/>
-    <path d="M75 202V55l87-30 87 30v147" fill="url(#building)" stroke="#6d9cbd" stroke-width="2.5" stroke-linejoin="round"/>
-    <path d="M91 202V66l71-25 71 25v136" fill="#f8fcff" stroke="#8ab1cc" stroke-width="1.8"/>
-    <path d="M146 202v-39a16 16 0 0 1 32 0v39" fill="#a9c8dc" stroke="#6d9cbd" stroke-width="2"/>
-    <g fill="#b8d8eb" stroke="#78a7c7" stroke-width="1.5">
-      <rect x="105" y="79" width="25" height="25" rx="4"/><rect x="150" y="79" width="25" height="25" rx="4"/><rect x="195" y="79" width="25" height="25" rx="4"/>
-      <rect x="105" y="119" width="25" height="25" rx="4"/><rect x="150" y="119" width="25" height="25" rx="4"/><rect x="195" y="119" width="25" height="25" rx="4"/>
-    </g>
-    <path d="M162 25V12m-9 5 9-5 9 5" fill="none" stroke="#6d9cbd" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-    <circle cx="245" cy="158" r="37" fill="#fff" opacity=".95"/>
-    <circle cx="245" cy="158" r="30" fill="url(#check)"/>
-    <path d="m231 158 9 9 19-21" fill="none" stroke="#fff" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
-    <path d="M62 202h216" stroke="#6d9cbd" stroke-width="2.5" stroke-linecap="round"/>
-    <circle cx="59" cy="75" r="5" fill="#b5d9ed"/><circle cx="279" cy="91" r="4" fill="#b5d9ed"/>
+    <ellipse cx="166" cy="245" rx="112" ry="10" fill="#edf2f5"/>
+    <rect x="70" y="43" width="184" height="164" rx="19" fill="url(#paper)" stroke="#c9dce9" stroke-width="2"/>
+    <path d="M91 83h110M91 105h137M91 127h100" stroke="#a9c3d5" stroke-width="8" stroke-linecap="round"/>
+    <rect x="91" y="151" width="71" height="29" rx="8" fill="#d1e5f2"/>
+    <path d="M84 61h-9m9 0v-9m155 9h9m-9 0v-9" stroke="#8fb4cc" stroke-width="3" stroke-linecap="round"/>
+    <circle cx="236" cy="178" r="48" fill="#fff"/>
+    <circle cx="236" cy="178" r="39" fill="url(#green)"/>
+    <path d="m216 178 14 14 28-31" fill="none" stroke="#fff" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="m64 34 7 13 14 2-10 10 2 14-13-7-13 7 3-14-11-10 15-2z" fill="#f6c95e" opacity=".9"/>
+    <circle cx="275" cy="66" r="6" fill="#76bddf"/><circle cx="52" cy="163" r="5" fill="#76bddf"/>
+    <path d="M45 220h250" stroke="#e4edf3" stroke-width="2" stroke-linecap="round"/>
   </svg>
-
-  <div class="status"><i></i> Mesajınız bizim için değerli</div>
-  <h2>Dilek ve şikâyetinizi aldık.</h2>
-  <p class="desc">Görüş, öneri veya bildiriminiz için bizimle WhatsApp üzerinden kolayca iletişime geçebilirsiniz.</p>
-
-  <div class="actions">
-    <a class="whatsapp" href="https://wa.me/905378702096?text=Merhaba%2C%20Nene%20Hatun%20Sitesi%20B%20Blok%20ile%20ilgili%20ileti%C5%9Fime%20ge%C3%A7mek%20istiyorum." target="_blank" rel="noopener noreferrer">
-      <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.52 3.48A11.8 11.8 0 0 0 12.13 0C5.6 0 .28 5.3.28 11.83c0 2.08.55 4.1 1.6 5.88L.18 24l6.45-1.69a11.9 11.9 0 0 0 5.5 1.4h.01c6.53 0 11.85-5.31 11.85-11.84 0-3.16-1.23-6.13-3.47-8.39ZM12.14 21.7h-.01a9.86 9.86 0 0 1-5.02-1.37l-.36-.21-3.83 1 1.02-3.73-.24-.38a9.82 9.82 0 0 1-1.51-5.18c0-5.43 4.42-9.85 9.86-9.85a9.8 9.8 0 0 1 6.98 2.89 9.8 9.8 0 0 1 2.88 6.98c0 5.44-4.42 9.85-9.77 9.85Zm5.41-7.38c-.3-.15-1.78-.88-2.06-.98-.28-.1-.48-.15-.68.15-.2.3-.78.98-.95 1.18-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.47-.89-.8-1.49-1.78-1.66-2.08-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.38-.02-.53-.07-.15-.68-1.63-.93-2.23-.24-.58-.49-.5-.68-.51h-.58c-.2 0-.53.07-.8.38-.28.3-1.05 1.03-1.05 2.51s1.08 2.91 1.23 3.11c.15.2 2.12 3.23 5.13 4.53.72.31 1.28.5 1.72.64.72.23 1.38.2 1.9.12.58-.09 1.78-.73 2.03-1.43.25-.7.25-1.3.18-1.43-.08-.13-.28-.2-.58-.35Z"/></svg>
-      WhatsApp'tan İletişime Geç
-    </a>
-    <div class="number">0537 870 20 96</div>
-  </div>
-  <p class="note">Nene Hatun Sitesi · B Blok<br>Dilek, öneri ve şikâyet iletişim sayfası</p>
-</section>
+  <a href="https://wa.me/905378702096" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp üzerinden iletişime geç">
+    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.52 3.48A11.8 11.8 0 0 0 12.13 0C5.6 0 .28 5.3.28 11.83c0 2.08.55 4.1 1.6 5.88L.18 24l6.45-1.69a11.9 11.9 0 0 0 5.5 1.4h.01c6.53 0 11.85-5.31 11.85-11.84 0-3.16-1.23-6.13-3.47-8.39ZM12.14 21.7h-.01a9.86 9.86 0 0 1-5.02-1.37l-.36-.21-3.83 1 1.02-3.73-.24-.38a9.82 9.82 0 0 1-1.51-5.18c0-5.43 4.42-9.85 9.86-9.85a9.8 9.8 0 0 1 6.98 2.89 9.8 9.8 0 0 1 2.88 6.98c0 5.44-4.42 9.85-9.77 9.85Zm5.41-7.38c-.3-.15-1.78-.88-2.06-.98-.28-.1-.48-.15-.68.15-.2.3-.78.98-.95 1.18-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.47-.89-.8-1.49-1.78-1.66-2.08-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.38-.02-.53-.07-.15-.68-1.63-.93-2.23-.24-.58-.49-.5-.68-.51h-.58c-.2 0-.53.07-.8.38-.28.3-1.05 1.03-1.05 2.51s1.08 2.91 1.23 3.11c.15.2 2.12 3.23 5.13 4.53.72.31 1.28.5 1.72.64.72.23 1.38.2 1.9.12.58-.09 1.78-.73 2.03-1.43.25-.7.25-1.3.18-1.43-.08-.13-.28-.2-.58-.35Z"/></svg>
+    WhatsApp
+  </a>
 </main>
 </body>
 </html>
